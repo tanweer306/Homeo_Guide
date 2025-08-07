@@ -47,7 +47,7 @@ const RemedySearchPage = () => {
 
   useEffect(() => {
     setRemedies(sampleRemedies);
-  });
+  }, []);
 
   const handleFilterChange = (filterType, value) => {
     setFilters(prev => ({

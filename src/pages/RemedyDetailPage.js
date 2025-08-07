@@ -5,7 +5,7 @@ import { BookmarkIcon as BookmarkSolidIcon } from '@heroicons/react/24/solid';
 import { useAuth } from '../contexts/AuthContext';
 
 const RemedyDetailPage = () => {
-  const { id } = useParams();
+  // const { id } = useParams(); // Remove unused id
   const { user, addBookmark, removeBookmark } = useAuth();
   const [remedy, setRemedy] = useState(null);
   const [loading, setLoading] = useState(true);

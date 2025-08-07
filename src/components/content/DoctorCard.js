@@ -1,10 +1,7 @@
 import React from 'react';
 import { MapPinIcon, PhoneIcon, EnvelopeIcon, CheckBadgeIcon } from '@heroicons/react/24/outline';
-import { useAuth } from '../../contexts/AuthContext';
 
 const DoctorCard = ({ doctor }) => {
-  const { user } = useAuth();
-
   return (
     <div className="card hover:shadow-md transition-shadow duration-200">
       <div className="flex flex-col md:flex-row gap-6">

@@ -47,7 +47,7 @@ const DoctorSearchPage = () => {
 
   useEffect(() => {
     setDoctors(sampleDoctors);
-  });
+  }, []);
 
   const filteredDoctors = doctors.filter(doctor => {
     if (!location) return true;
