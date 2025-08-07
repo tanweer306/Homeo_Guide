@@ -45,10 +45,9 @@ const DoctorSearchPage = () => {
     }
   ];
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setDoctors(sampleDoctors);
-  }, []);
+  }, [sampleDoctors]);
 
   const filteredDoctors = doctors.filter(doctor => {
     if (!location) return true;
