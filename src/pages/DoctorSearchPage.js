@@ -45,6 +45,7 @@ const DoctorSearchPage = () => {
     }
   ];
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setDoctors(sampleDoctors);
   }, []);
