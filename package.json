@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A comprehensive homeopathic information platform with educational content, practitioner directory, and AI consultation features",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
