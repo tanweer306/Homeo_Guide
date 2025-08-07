@@ -3,6 +3,40 @@ import { FunnelIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import SearchBar from '../components/search/SearchBar';
 import RemedyCard from '../components/content/RemedyCard';
 
+// Move sampleRemedies outside the component
+const sampleRemedies = [
+  {
+    id: 'arnica-montana',
+    name: 'Arnica Montana',
+    scientificName: 'Arnica montana',
+    commonNames: ['Mountain Arnica', "Leopard's Bane"],
+    sourceType: 'Plant',
+    family: 'Asteraceae',
+    description: 'Traditionally used for bruises and trauma',
+    keywords: ['trauma', 'bruising', 'shock', 'injury']
+  },
+  {
+    id: 'belladonna',
+    name: 'Belladonna',
+    scientificName: 'Atropa belladonna',
+    commonNames: ['Deadly Nightshade'],
+    sourceType: 'Plant',
+    family: 'Solanaceae',
+    description: 'Traditionally used for fever and inflammation',
+    keywords: ['fever', 'inflammation', 'sudden onset']
+  },
+  {
+    id: 'chamomilla',
+    name: 'Chamomilla',
+    scientificName: 'Matricaria chamomilla',
+    commonNames: ['German Chamomile'],
+    sourceType: 'Plant',
+    family: 'Asteraceae',
+    description: 'Traditionally used for teething and irritability',
+    keywords: ['teething', 'irritability', 'pain']
+  }
+];
+
 const RemedySearchPage = () => {
   const [remedies, setRemedies] = useState([]);
   const [filters, setFilters] = useState({
@@ -12,42 +46,9 @@ const RemedySearchPage = () => {
   });
   const [showFilters, setShowFilters] = useState(false);
 
-  const sampleRemedies = [
-    {
-      id: 'arnica-montana',
-      name: 'Arnica Montana',
-      scientificName: 'Arnica montana',
-      commonNames: ['Mountain Arnica', "Leopard's Bane"],
-      sourceType: 'Plant',
-      family: 'Asteraceae',
-      description: 'Traditionally used for bruises and trauma',
-      keywords: ['trauma', 'bruising', 'shock', 'injury']
-    },
-    {
-      id: 'belladonna',
-      name: 'Belladonna',
-      scientificName: 'Atropa belladonna',
-      commonNames: ['Deadly Nightshade'],
-      sourceType: 'Plant',
-      family: 'Solanaceae',
-      description: 'Traditionally used for fever and inflammation',
-      keywords: ['fever', 'inflammation', 'sudden onset']
-    },
-    {
-      id: 'chamomilla',
-      name: 'Chamomilla',
-      scientificName: 'Matricaria chamomilla',
-      commonNames: ['German Chamomile'],
-      sourceType: 'Plant',
-      family: 'Asteraceae',
-      description: 'Traditionally used for teething and irritability',
-      keywords: ['teething', 'irritability', 'pain']
-    }
-  ];
-
   useEffect(() => {
     setRemedies(sampleRemedies);
-  }, [sampleRemedies]);
+  }, []);
 
   const handleFilterChange = (filterType, value) => {
     setFilters(prev => ({

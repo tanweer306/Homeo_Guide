@@ -2,52 +2,53 @@ import React, { useState, useEffect } from 'react';
 import { MapPinIcon } from '@heroicons/react/24/outline';
 import DoctorCard from '../components/content/DoctorCard';
 
+// Move sampleDoctors outside the component
+const sampleDoctors = [
+  {
+    id: 'dr-sarah-johnson',
+    name: 'Dr. Sarah Johnson',
+    credentials: ['ND', 'DHt', 'CCH'],
+    verified: true,
+    specializations: ['Classical Homeopathy', 'Pediatric Care'],
+    location: {
+      city: 'Portland',
+      state: 'Oregon'
+    },
+    contact: {
+      phone: '(555) 123-4567',
+      email: 'dr.johnson@example.com'
+    },
+    consultationTypes: ['In-Person', 'Telehealth'],
+    experience: 15,
+    bio: 'Dr. Johnson specializes in classical homeopathy with focus on constitutional treatment.'
+  },
+  {
+    id: 'dr-michael-chen',
+    name: 'Dr. Michael Chen',
+    credentials: ['MD', 'CCH'],
+    verified: true,
+    specializations: ['Acute Care', 'Chronic Disease'],
+    location: {
+      city: 'Seattle',
+      state: 'Washington'
+    },
+    contact: {
+      phone: '(555) 987-6543',
+      email: 'dr.chen@example.com'
+    },
+    consultationTypes: ['In-Person'],
+    experience: 12,
+    bio: 'Dr. Chen focuses on acute care and chronic disease management using homeopathic principles.'
+  }
+];
+
 const DoctorSearchPage = () => {
   const [doctors, setDoctors] = useState([]);
   const [location, setLocation] = useState('');
 
-  const sampleDoctors = [
-    {
-      id: 'dr-sarah-johnson',
-      name: 'Dr. Sarah Johnson',
-      credentials: ['ND', 'DHt', 'CCH'],
-      verified: true,
-      specializations: ['Classical Homeopathy', 'Pediatric Care'],
-      location: {
-        city: 'Portland',
-        state: 'Oregon'
-      },
-      contact: {
-        phone: '(555) 123-4567',
-        email: 'dr.johnson@example.com'
-      },
-      consultationTypes: ['In-Person', 'Telehealth'],
-      experience: 15,
-      bio: 'Dr. Johnson specializes in classical homeopathy with focus on constitutional treatment.'
-    },
-    {
-      id: 'dr-michael-chen',
-      name: 'Dr. Michael Chen',
-      credentials: ['MD', 'CCH'],
-      verified: true,
-      specializations: ['Acute Care', 'Chronic Disease'],
-      location: {
-        city: 'Seattle',
-        state: 'Washington'
-      },
-      contact: {
-        phone: '(555) 987-6543',
-        email: 'dr.chen@example.com'
-      },
-      consultationTypes: ['In-Person'],
-      experience: 12,
-      bio: 'Dr. Chen focuses on acute care and chronic disease management using homeopathic principles.'
-    }
-  ];
-
   useEffect(() => {
     setDoctors(sampleDoctors);
-  }, [sampleDoctors]);
+  }, []);
 
   const filteredDoctors = doctors.filter(doctor => {
     if (!location) return true;
